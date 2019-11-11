@@ -1,0 +1,54 @@
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <title>CRUD Angular Application</title>
+
+    <!-- load all css files -->
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Item APP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#/">Home <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<div class="container">
+    <ng-view></ng-view>
+</div>
+
+<!-- node_modules -->
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-route/angular-route.js"></script>
+<script src="node_modules/angular-resource/angular-resource.js"></script>
+<script src="node_modules/@cgross/angular-notify/angular-notify.js"></script>
+
+<script src="app.js"></script>
+<script src="config/routes.js"></script>
+
+<!-- factories -->
+<script src="app/factories/item.js"></script>
+
+<!-- directives -->
+<script src="app/directives/item_directive.js"></script>
+
+<!-- services -->
+<script src="app/services/notify_service.js"></script>
+
+<!-- controllers -->
+<script src="app/controllers/items/index.js"></script>
+<script src="app/controllers/items/new.js"></script>
+<script src="app/controllers/items/edit.js"></script>
+
+</body>
+</html>

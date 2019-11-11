@@ -1,0 +1,14 @@
+@import "../node_modules/@cgross/angular-notify/angular-notify.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap.css";
+
+.new-item{
+    margin: auto;
+}
+
+.new-btn{
+    margin: 5px 0;
+}
+
+h1{
+    margin: 20px 0;
+}

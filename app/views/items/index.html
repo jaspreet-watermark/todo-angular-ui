@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-md-10 offset-1">
+        <h1 class="text-center"> Items </h1>
+        <a href="#/items/new" class="btn btn-sm btn-success float-right new-btn">New Item</a>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Status</th>
+                <th scope="col">Started At</th>
+                <th colspan="2">Acions</th>
+            </tr>
+            </thead>
+            <tbody >
+            <tr ng-show="!items.length"><td colspan="5" class="text-center">No Items Available</td></tr>
+            <tr item-partial item="item" ng-repeat="item in items"></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
