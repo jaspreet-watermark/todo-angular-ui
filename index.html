@@ -8,18 +8,25 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Item APP</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Item APP</a>
+            </div>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#/">Home <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#/">Home <span class="sr-only">(current)</span></a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 </header>
@@ -32,6 +39,7 @@
 <script src="node_modules/angular-route/angular-route.js"></script>
 <script src="node_modules/angular-resource/angular-resource.js"></script>
 <script src="node_modules/@cgross/angular-notify/angular-notify.js"></script>
+<script src="node_modules/angular-paging/dist/paging.js"></script>
 
 <script src="app.js"></script>
 <script src="config/routes.js"></script>
@@ -49,6 +57,7 @@
 <script src="app/controllers/items/index.js"></script>
 <script src="app/controllers/items/new.js"></script>
 <script src="app/controllers/items/edit.js"></script>
+<script src="app/controllers/items/delete.js"></script>
 
 </body>
 </html>

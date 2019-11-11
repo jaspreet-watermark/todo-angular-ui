@@ -1,8 +1,8 @@
 <div class="row">
-    <div class="col-md-10 offset-1">
+    <div class="col-md-10 col-md-offset-1">
         <h1 class="text-center"> Items </h1>
         <a href="#/items/new" class="btn btn-sm btn-success float-right new-btn">New Item</a>
-        <table class="table">
+        <table class="table table-striped">
             <thead class="thead-dark">
             <tr>
                 <th scope="col">ID</th>
@@ -17,5 +17,11 @@
             <tr item-partial item="item" ng-repeat="item in items"></tr>
             </tbody>
         </table>
+        <paging
+                page="currentPage"
+                page-size="5"
+                total="100"
+                pg-href="#/?page={page}">
+        </paging>
     </div>
 </div>

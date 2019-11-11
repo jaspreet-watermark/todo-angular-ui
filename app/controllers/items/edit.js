@@ -1,5 +1,5 @@
-app.controller('editCtrl', ['$scope', '$log', 'Item', '$routeParams','notifyService',
-    function ($scope, $log, Item, $routeParams, notifyService) {
+app.controller('editCtrl', ['$scope', '$log', 'Item', '$routeParams','$location','notifyService',
+    function ($scope, $log, Item, $routeParams, $location, notifyService) {
         $scope.item = getItem($routeParams.id);
 
         // scope functions

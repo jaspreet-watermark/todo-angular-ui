@@ -9,9 +9,13 @@ app.config(function ($routeProvider) {
             templateUrl: 'app/views/items/new.html',
             controller: 'newCtrl'
         })
-        .when('/item/:id', {
+        .when('/items/:id/edit', {
             templateUrl: 'app/views/items/edit.html',
             controller: 'editCtrl'
+        })
+        .when('/items/:id/destroy', {
+            template: '',
+            controller: 'deleteCtrl'
         })
         .otherwise({redirectTo: '/'});
 });

@@ -1,2 +1,2 @@
-var app = angular.module('app',['ngRoute', 'ngResource', 'cgNotify']);
+var app = angular.module('app',['ngRoute', 'ngResource', 'cgNotify', 'bw.paging']);
 
