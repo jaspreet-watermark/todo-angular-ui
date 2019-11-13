@@ -1,4 +1,3 @@
-// SERVICES
 app.service('notifyService', ['notify',function(notify) {
 
     notify.config({

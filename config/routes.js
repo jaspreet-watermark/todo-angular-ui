@@ -1,4 +1,3 @@
-//Routes
 app.config(function ($routeProvider) {
     $routeProvider
         .when('/', {
@@ -19,4 +18,3 @@ app.config(function ($routeProvider) {
         })
         .otherwise({redirectTo: '/'});
 });
-

@@ -8,5 +8,3 @@ app.factory('RequestBuilder', ['$resource', function ($resource) {
     };
     return $resource(url, params, actions);
 }]);
-
-
