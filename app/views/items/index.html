@@ -1,7 +1,17 @@
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
         <h1 class="text-center"> Items </h1>
-        <a href="#/items/new" class="btn btn-sm btn-success float-right new-btn">New Item</a>
+        <div class="row" style="padding: 0 15px">
+            <form class="form-inline" ng-submit="searchByTag()">
+                <div class="form-group">
+                    <input ng-model="tag" type="text" class="form-control" placeholder="Search by tag">
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+                <button type="button" class="btn btn-danger" ng-click="reset()">Reset</button>
+                <a href="#/items/new" class="btn btn-sm btn-success float-right new-btn">New Item</a>
+            </form>
+        </div>
+
         <table class="table table-striped">
             <thead class="thead-dark">
             <tr>
@@ -17,11 +27,13 @@
             <tr item-partial item="item" ng-repeat="item in items"></tr>
             </tbody>
         </table>
-        <paging
-                page="currentPage"
-                page-size="5"
-                total="100"
-                pg-href="#/?page={page}">
-        </paging>
+        <div class="row text-center">
+            <paging
+                    page="currentPage"
+                    page-size="pageSize"
+                    total="total"
+                    paging-action="paginate(page)">
+            </paging>
+        </div>
     </div>
 </div>
