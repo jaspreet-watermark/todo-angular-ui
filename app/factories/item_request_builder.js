@@ -1,4 +1,4 @@
-app.factory('RequestBuilder', ['$resource', function ($resource) {
+app.factory('ItemRequestBuilder', ['$resource', function ($resource) {
     var url = 'http://localhost:3000/api/v1/items/:id';
     var params = {id: '@_id'};
     var actions = {

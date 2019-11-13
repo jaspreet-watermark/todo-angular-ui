@@ -1,10 +1,13 @@
-app.controller('editCtrl', ['$scope', '$log', 'RequestBuilder', '$routeParams','$location','notifyService',
-    function ($scope, $log, RequestBuilder, $routeParams, $location, notifyService) {
+app.controller('editCtrl', ['$scope', '$log', 'ItemRequestBuilder', '$routeParams','$location','notifyService',
+    function ($scope, $log, ItemRequestBuilder, $routeParams, $location, notifyService) {
         $scope.item = getItem($routeParams.id);
+        $scope.newTag = '';
+        $scope.tags = [];
 
         // scope functions
         $scope.updateItem = function() {
-            RequestBuilder.update({id: $routeParams.id}, $scope.item).$promise.then(function (response) {
+            $scope.item.tags = $scope.tags;
+            ItemRequestBuilder.update({id: $routeParams.id}, $scope.item).$promise.then(function (response) {
                 $location.path('#/');
                 notifyService.showSucess('Item Successfully Updated!');
             },function(error) {
@@ -13,10 +16,20 @@ app.controller('editCtrl', ['$scope', '$log', 'RequestBuilder', '$routeParams','
             });
         };
 
+        $scope.removeTag = function(index){
+            $scope.tags.splice(index, 1);
+        };
+
+        $scope.addTag = function(){
+            $scope.tags.push({name: $scope.newTag});
+            $scope.newTag = '';
+        };
+
         // local functions
         function getItem(id) {
-            RequestBuilder.get({id: id}).$promise.then(function (response) {
+            ItemRequestBuilder.get({id: id}).$promise.then(function (response) {
                 $scope.item = response.item;
+                $scope.tags = $scope.item.tags;
             },function(error) {
                 $log.error(error);
                 notifyService.showError(error.data.error);

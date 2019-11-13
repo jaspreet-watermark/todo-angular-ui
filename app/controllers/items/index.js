@@ -1,5 +1,5 @@
-app.controller('indexCtrl', ['$scope', '$log', 'RequestBuilder','notifyService',
-    function ($scope, $log, RequestBuilder, notifyService) {
+app.controller('indexCtrl', ['$scope', '$log', 'ItemRequestBuilder','notifyService',
+    function ($scope, $log, ItemRequestBuilder, notifyService) {
 
         // scope variables
         $scope.currentPage = 1;
@@ -31,7 +31,7 @@ app.controller('indexCtrl', ['$scope', '$log', 'RequestBuilder','notifyService',
             if ($scope.tag !== ''){
                 query.tag = $scope.tag;
             }
-            RequestBuilder.query(query).$promise.then(function (response) {
+            ItemRequestBuilder.query(query).$promise.then(function (response) {
                 $scope.items = response.items;
                 $scope.total = response.total;
             },function(error) {
