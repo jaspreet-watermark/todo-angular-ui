@@ -1,5 +1,5 @@
-app.controller('deleteCtrl', ['$scope', '$log', 'ItemRequestBuilder', '$routeParams','$location','notifyService',
-    function ($scope, $log, ItemRequestBuilder, $routeParams, $location, notifyService) {
+app.controller('deleteCtrl', ['$scope', 'ItemRequestBuilder', '$routeParams','$location','notifyService',
+    function ($scope, ItemRequestBuilder, $routeParams, $location, notifyService) {
 
         // scope variables
         $scope.id = $routeParams.id;
@@ -11,7 +11,6 @@ app.controller('deleteCtrl', ['$scope', '$log', 'ItemRequestBuilder', '$routePar
                 $location.path('#/');
                 notifyService.showSucess('Item Successfully Deleted!');
             },function(error) {
-                $log.error(error);
                 $location.path('#/');
                 notifyService.showError(error.data.error);
             });

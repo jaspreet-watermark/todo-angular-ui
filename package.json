@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "prestart": "npm install",
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "karma start config/karma.conf.js"
   },
   "keywords": [],
   "author": "",
@@ -13,11 +14,20 @@
   "dependencies": {
     "@cgross/angular-notify": "^2.5.1",
     "angular": "^1.2.31",
+    "angular-mocks": "^1.2.31",
     "angular-paging": "^2.2.2",
     "angular-resource": "^1.2.31",
     "angular-route": "^1.2.31",
     "bootstrap": "^3.3.6",
     "express": "^4.17.1",
     "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "jasmine": "^3.5.0",
+    "karma": "^4.4.1",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coverage": "^2.0.1",
+    "karma-jasmine": "^2.0.1",
+    "karma-phantomjs-launcher": "^1.0.4"
   }
 }

@@ -1,5 +1,5 @@
-app.controller('indexCtrl', ['$scope', '$log', 'ItemRequestBuilder','notifyService',
-    function ($scope, $log, ItemRequestBuilder, notifyService) {
+app.controller('indexCtrl', ['$scope', 'ItemRequestBuilder','notifyService',
+    function ($scope, ItemRequestBuilder, notifyService) {
 
         // scope variables
         $scope.currentPage = 1;
@@ -15,11 +15,11 @@ app.controller('indexCtrl', ['$scope', '$log', 'ItemRequestBuilder','notifyServi
             loadItems();
         };
 
-        $scope.searchByTag = function(page){
+        $scope.searchByTag = function(){
             loadItems();
         };
 
-        $scope.reset = function(page){
+        $scope.reset = function(){
             $scope.tag = '';
             $scope.currentPage = 1;
             loadItems();
@@ -35,7 +35,6 @@ app.controller('indexCtrl', ['$scope', '$log', 'ItemRequestBuilder','notifyServi
                 $scope.items = response.items;
                 $scope.total = response.total;
             },function(error) {
-                $log.error(error);
                 notifyService.showError('Something Went Wrong!');
             });
         }

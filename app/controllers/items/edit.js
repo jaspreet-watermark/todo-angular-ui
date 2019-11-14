@@ -1,5 +1,5 @@
-app.controller('editCtrl', ['$scope', '$log', 'ItemRequestBuilder', '$routeParams','$location','notifyService',
-    function ($scope, $log, ItemRequestBuilder, $routeParams, $location, notifyService) {
+app.controller('editCtrl', ['$scope', 'ItemRequestBuilder', '$routeParams','$location','notifyService',
+    function ($scope, ItemRequestBuilder, $routeParams, $location, notifyService) {
         $scope.item = getItem($routeParams.id);
         $scope.newTag = '';
         $scope.tags = [];
@@ -31,7 +31,6 @@ app.controller('editCtrl', ['$scope', '$log', 'ItemRequestBuilder', '$routeParam
                 $scope.item = response.item;
                 $scope.tags = $scope.item.tags;
             },function(error) {
-                $log.error(error);
                 notifyService.showError(error.data.error);
             });
         }

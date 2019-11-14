@@ -1,5 +1,5 @@
-app.controller('newCtrl', ['$scope', '$log', 'ItemRequestBuilder', '$location','notifyService',
-    function ($scope, $log, ItemRequestBuilder, $location, notifyService) {
+app.controller('newCtrl', ['$scope', 'ItemRequestBuilder', '$location','notifyService',
+    function ($scope, ItemRequestBuilder, $location, notifyService) {
         $scope.item = {title: '', status: 'prepared'};
         $scope.newTag = '';
         $scope.tags = [];
@@ -11,7 +11,6 @@ app.controller('newCtrl', ['$scope', '$log', 'ItemRequestBuilder', '$location','
                 $location.path('#/');
                 notifyService.showSucess('Item Successfully Created!');
             },function(error) {
-                $log.error(error);
                 notifyService.showError(notifyService.filterError(error.data.error));
             });
         };
