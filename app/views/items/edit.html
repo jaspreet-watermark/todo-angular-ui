@@ -17,6 +17,16 @@
                     </select>
                 </div>
 
+                <div class="form-group">
+                    <label>Started At</label>
+                    <input type="text" value="{{ item.started_at }}" class="form-control" disabled>
+                </div>
+
+                <div class="form-group">
+                    <label>Completed At</label>
+                    <input type="text" value="{{ item.completed_at }}" class="form-control" disabled>
+                </div>
+
                 <label>Tags</label>
                 <div class="form-inline form-group" ng-repeat="tag in tags">
                     <div class="form-group">
