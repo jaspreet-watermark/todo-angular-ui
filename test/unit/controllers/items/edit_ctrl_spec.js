@@ -72,6 +72,20 @@ describe('Testing Items Edit Controller', function () {
         spyOn(notifyService, 'showSucess').and.callFake(function () {return true});
 
         scope.item = putResponse["item"];
+
+        scope.tags = [];
+
+        // add tags
+        scope.newTag = 'bad';
+        scope.addTag();
+
+        //remove tags
+        scope.removeTag(0);
+
+        // add tags
+        scope.newTag = 'good';
+        scope.addTag();
+
         scope.updateItem();
 
         httpBackend.expectPUT('http://localhost:3000/api/v1/items/5dcbdd0dd450cb2f8b4599cf', scope.item)

@@ -37,6 +37,15 @@ describe('Testing Items New Controller', function () {
         spyOn(notifyService, 'showSucess').and.callFake(function () {return true});
 
         scope.item = {title: 'New Title 1', status: 'prepared'};
+        scope.tags = [];
+
+        // add tags
+        scope.newTag = 'bad';
+        scope.addTag();
+
+        //remove tags
+        scope.removeTag(0);
+
         scope.createItem();
 
         httpBackend.expectPOST('http://localhost:3000/api/v1/items', scope.item)

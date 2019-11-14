@@ -100,4 +100,26 @@ describe('Testing Items Index Controller', function () {
         expect(scope.items).toEqual(tagResponse["items"]);
         expect(scope.total).toBe(tagResponse["total"]);
     });
+
+    it("should paginate the results", function(){
+        scope.paginate(2);
+
+        httpBackend.expectGET('http://localhost:3000/api/v1/items?page=2')
+            .respond(tagResponse);
+        httpBackend.flush();
+
+        expect(scope.items).toEqual(tagResponse["items"]);
+        expect(scope.total).toBe(tagResponse["total"]);
+    });
+
+    it("should reset pagination and search by tag", function(){
+        scope.reset();
+
+        httpBackend.expectGET('http://localhost:3000/api/v1/items?page=1')
+            .respond(tagResponse);
+        httpBackend.flush();
+
+        expect(scope.items).toEqual(tagResponse["items"]);
+        expect(scope.total).toBe(tagResponse["total"]);
+    });
 });

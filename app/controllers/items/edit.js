@@ -11,7 +11,6 @@ app.controller('editCtrl', ['$scope', 'ItemRequestBuilder', '$routeParams','$loc
                 $location.path('#/');
                 notifyService.showSucess('Item Successfully Updated!');
             },function(error) {
-                $log.error(error);
                 notifyService.showError(notifyService.filterError(error.data.error));
             });
         };
