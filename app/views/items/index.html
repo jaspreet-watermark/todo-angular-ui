@@ -12,21 +12,9 @@
             </form>
         </div>
 
-        <table class="table table-striped">
-            <thead class="thead-dark">
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Title</th>
-                <th scope="col">Status</th>
-                <th scope="col">Started At</th>
-                <th colspan="2">Acions</th>
-            </tr>
-            </thead>
-            <tbody >
-            <tr ng-show="!items.length"><td colspan="5" class="text-center">No Items Available</td></tr>
-            <tr item-partial item="item" ng-repeat="item in items"></tr>
-            </tbody>
-        </table>
+        <div class="row">
+            <div item-partial-grid item="item" display="display(item.id)" ng-repeat="item in items" class="col-xs-6 col-md-4 items-div" ></div>
+        </div>
         <div class="row text-center">
             <paging
                     page="currentPage"
@@ -37,3 +25,29 @@
         </div>
     </div>
 </div>
+<div id="itemModal" class="modal" ng-class="{true:'show', false:'fade'}[modalDisplay]" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close"  ng-click="close()" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">{{item.title}}</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Status</label>: {{item.status}}
+                </div>
+
+                <div class="form-group">
+                    <label>Started At</label>: {{item.started_at}}
+                </div>
+
+                <div class="form-group">
+                    <label>Completed At</label>: {{item.completed_at}}
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" ng-click="close()" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

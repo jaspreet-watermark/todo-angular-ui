@@ -18,3 +18,9 @@ table .thead-dark{
     background: black;
     color: white;
 }
+
+.items-div{
+    border: 1px solid grey;
+    padding: 5px;
+    margin: 5px;
+}

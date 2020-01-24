@@ -1,8 +1,8 @@
 // DIRECTIVES
-app.directive("itemPartial", function() {
+app.directive("itemPartialGrid", function() {
     return {
         restrict: 'A',
-        templateUrl: '../app/views/partials/item.html',
+        templateUrl: '../app/views/partials/item_grid.html',
         replace: false,
         scope: {
             item: "=",

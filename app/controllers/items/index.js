@@ -7,6 +7,8 @@ app.controller('indexCtrl', ['$scope', 'ItemRequestBuilder','notifyService',
         $scope.items = [];
         $scope.total = 0;
         $scope.pageSize = 10;
+        $scope.modalDisplay = false;
+
 
         loadItems();
 
@@ -37,5 +39,20 @@ app.controller('indexCtrl', ['$scope', 'ItemRequestBuilder','notifyService',
             },function(error) {
                 notifyService.showError('Something Went Wrong!');
             });
+        }
+
+        $scope.display = function(id){
+            console.log("Dsfsfsdfs");
+            console.log(id);
+            $scope.item = $scope.items.filter(function(item) {
+                return item.id === id;
+            })[0];
+            console.log($scope.item)
+            $scope.modalDisplay = true;
+        }
+
+
+        $scope.close = function(){
+            $scope.modalDisplay = false;
         }
     }]);
