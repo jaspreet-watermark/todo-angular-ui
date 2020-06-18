@@ -13,7 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "@cgross/angular-notify": "^2.5.1",
-    "angular": "^1.2.31",
+    "angular": "^1.8.0",
     "angular-mocks": "^1.2.31",
     "angular-paging": "^2.2.2",
     "angular-resource": "^1.2.31",
